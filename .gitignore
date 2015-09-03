@@ -15,3 +15,5 @@ web-app/WEB-INF/tld/fmt.tld
 build/*
 .gradle
 .env
+*.*~*
+
