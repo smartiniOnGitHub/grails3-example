@@ -17,7 +17,7 @@ boot timeout limit imposed by Heroku. If that's the case, please contact
 [Heroku Support](http://help.heroku.com).
 
 After a succesful deploy (remote build and run), the webapp will run at URL: 
-http://<app-name>.herokuapp.com
+https://<app-name>.herokuapp.com
 
 To check what happens in remote, use for example this command:
 
