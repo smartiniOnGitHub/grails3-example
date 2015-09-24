@@ -53,7 +53,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-starter-actuator"
     compile "org.springframework.boot:spring-boot-autoconfigure"
-    runtime 'org.postgresql:postgresql:9.4-1202-jdbc41'
+    runtime "org.postgresql:postgresql:9.4-1202-jdbc41"
     provided "org.springframework.boot:spring-boot-starter-tomcat"
     compile "org.grails:grails-dependencies"
     compile "org.grails:grails-web-boot"
@@ -73,8 +73,8 @@ dependencies {
 
     console "org.grails:grails-console"
 
-    compile 'org.eclipse.jetty:jetty-runner:9.2.11.v20150529'
-    compile 'com.github.jsimone:webapp-runner:7.0.57.2'
+    compile "org.eclipse.jetty:jetty-runner:9.2.11.v20150529"
+    compile "com.github.jsimone:webapp-runner:7.0.57.2"
 }
 
 task wrapper(type: Wrapper) {
@@ -96,6 +96,7 @@ war.mustRunAfter clean
 task copyToLib(type: Copy) {
     into "$buildDir/server"
     from(configurations.compile) {
+        include "jetty-runner*"
         include "webapp-runner*"
     }
 }
