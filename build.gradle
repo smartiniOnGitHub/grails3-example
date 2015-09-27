@@ -83,6 +83,11 @@ task wrapper(type: Wrapper) {
     gradleVersion = gradleWrapperVersion
 }
 
+tasks.withType(org.springframework.boot.gradle.run.BootRunTask) {
+    systemProperty('POSTGRESQL_URI', System.env.DATABASE_URL)  // get the env var, and make it available in application.yml
+    systemProperty('MONGODB_URI', System.env.MONGOLAB_URI)  // get the env var, and make it available in application.yml
+}
+
 task stage() {
     dependsOn clean, assemble
 }
