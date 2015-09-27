@@ -84,7 +84,7 @@ task wrapper(type: Wrapper) {
 }
 
 task stage() {
-    dependsOn clean, war
+    dependsOn clean, assemble
 }
 
 tasks.stage.doLast() {
@@ -93,7 +93,7 @@ tasks.stage.doLast() {
     delete fileTree(dir: "build/distributions")
     delete fileTree(dir: "build/libs", exclude: "*.war")
 }
-war.mustRunAfter clean
+assemble.mustRunAfter clean
 
 task copyToLib(type: Copy) {
     into "$buildDir/server"
