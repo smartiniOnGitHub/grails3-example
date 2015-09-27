@@ -1,4 +1,4 @@
-*.iws
+.DS_Store
 *Db.properties
 *Db.script
 .settings
@@ -6,16 +6,21 @@
 .project
 eclipse
 stacktrace.log
-target
+target/
 /plugins
 /web-app/plugins
 /web-app/WEB-INF/classes
 web-app/WEB-INF/tld/c.tld
 web-app/WEB-INF/tld/fmt.tld
-build/*
+build/
 .gradle
 .env
 .asscache
 *.*~*
 *~
+.idea
+*.iml
+*.ipr
+*.iws
+Thumbs.db
 
