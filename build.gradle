@@ -17,7 +17,7 @@ plugins {
     id "io.spring.dependency-management" version "0.5.2.RELEASE"
 }
 
-version "0.2"
+version "0.3"
 group "heroku"
 
 apply plugin: "spring-boot"
@@ -63,9 +63,6 @@ dependencies {
     compile "org.hibernate:hibernate-ehcache"
     compile "org.grails.plugins:scaffolding"
 
-    // compile "org.eclipse.jetty:jetty-runner:9.2.11.v20150529"
-    // compile "com.github.jsimone:webapp-runner:7.0.57.2"
-
     runtime "org.grails.plugins:asset-pipeline"
 
     runtime "org.postgresql:postgresql:9.4-1202-jdbc41"
@@ -99,15 +96,4 @@ tasks.stage.doLast() {
     delete fileTree(dir: "build/libs", exclude: "*.war")
 }
 assemble.mustRunAfter clean
-
-task copyToLib(type: Copy) {
-    into "$buildDir/server"
-    from(configurations.compile) {
-        include "jetty-runner*"
-        include "webapp-runner*"
-    }
-}
-
-stage.dependsOn(copyToLib)
-
 
