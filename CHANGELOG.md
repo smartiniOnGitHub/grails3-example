@@ -1,4 +1,8 @@
 
+# **0.3**
+- update to Grails-3.0.9 and related plugins ... wip
+- add sample for connecting to a PostgreSQL and a MongoDB instance, using a connection URL form an environmental variable (typical at Heroku) ... wip
+
 # **0.2**
 - update to Grails-3.0.8, running at Heroku but using the Tomcat embedded available with Grails, approach suggested even by Grails developers
 - now even Grails usual run works both in DEV environment ('grails run-app') and in PROD ('grails run-app -Dgrails.env=prod', more aligned with the real test at Heroku)
